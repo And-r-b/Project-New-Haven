@@ -48,8 +48,10 @@ nav .hamburger {
     display: flex;
     justify-content: center;
     width: 100%;
+    overflow: hidden;  /* Hide items that are off-screen */
 }
 
+/* This will ensure the dropdown is always visible on desktop */
 #nav-links li {
     margin: 0 15px;
 }
@@ -70,29 +72,38 @@ nav .hamburger {
 @media (max-width: 768px) {
     /* Hide navbar links by default on smaller screens */
     #nav-links {
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        max-height: 0; /* Collapse by default */
+        transition: max-height 0.5s ease-in-out; /* Smooth transition for height */
     }
 
-    /* When hamburger is clicked */
+    /* When hamburger is clicked, expand the menu */
     #nav-links.active {
-        display: flex;
+        max-height: 500px; /* Expand menu to fit all items */
     }
 
-    /* Show hamburger icon on small screens */
     nav .hamburger {
         display: block;
     }
 
-    /* Adjust navbar links */
     #nav-links li {
         margin: 10px 0;
     }
 
     #nav-links a {
         padding: 15px;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+    /* Make sure the nav links are always visible on desktop */
+    #nav-links {
+        display: flex;
+        justify-content: center;
+        max-height: none; /* No collapse or transition needed */
     }
 }
 
