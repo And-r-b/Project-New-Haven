@@ -35,12 +35,14 @@ nav {
     padding: 1rem;
 }
 
+/* Hamburger Icon */
 nav .hamburger {
-    display: none; /* Hide hamburger by default */
+    display: none; /* Hide by default */
     font-size: 2rem;
     cursor: pointer;
 }
 
+/* Navbar Links */
 #nav-links {
     list-style: none;
     padding: 0;
@@ -48,10 +50,11 @@ nav .hamburger {
     display: flex;
     justify-content: center;
     width: 100%;
-    overflow: hidden;  /* Hide items that are off-screen */
+    max-height: 0; /* Initially collapse the menu */
+    overflow: hidden; /* Hide the overflowed content */
+    transition: max-height 0.5s ease-out; /* Smooth transition */
 }
 
-/* This will ensure the dropdown is always visible on desktop */
 #nav-links li {
     margin: 0 15px;
 }
@@ -68,24 +71,30 @@ nav .hamburger {
     border-radius: 5px;
 }
 
+/* When the nav is active (hamburger clicked) */
+#nav-links.active {
+    max-height: 500px; /* Allow the menu to open */
+}
+
 /* Mobile View */
 @media (max-width: 768px) {
-    /* Hide navbar links by default on smaller screens */
-    #nav-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-height: 0; /* Collapse by default */
-        transition: max-height 0.5s ease-in-out; /* Smooth transition for height */
-    }
-
-    /* When hamburger is clicked, expand the menu */
-    #nav-links.active {
-        max-height: 500px; /* Expand menu to fit all items */
-    }
-
+    /* Show hamburger icon on small screens */
     nav .hamburger {
         display: block;
+    }
+
+    /* Hide navbar links by default */
+    #nav-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-height: 0; /* Keep hidden initially */
+        overflow: hidden;
+    }
+
+    /* When hamburger is clicked */
+    #nav-links.active {
+        max-height: 500px; /* Expands with animation */
     }
 
     #nav-links li {
@@ -99,11 +108,15 @@ nav .hamburger {
 
 /* Desktop View */
 @media (min-width: 769px) {
-    /* Make sure the nav links are always visible on desktop */
+    /* Show the navbar links on larger screens */
     #nav-links {
-        display: flex;
-        justify-content: center;
-        max-height: none; /* No collapse or transition needed */
+        max-height: none;
+        overflow: visible;
+    }
+
+    /* Ensure the hamburger icon doesn't show on desktop */
+    nav .hamburger {
+        display: none;
     }
 }
 
