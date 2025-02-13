@@ -3,9 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NewHavenRP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/pictures/newhavenbanner.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+    </style>
 </head>
 <body>
-    
+
+    <!-- Header with title and navbar -->
+    <header>
+        <h1>New Haven Roleplay</h1>
+        <nav class="menu">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Rules and Guidelines</a></li>
+                <li><a href="#">Guides and more</a></li>
+                <li><a href="#">Business Owners</a></li>
+                <li><a href="#">Ban Appeals</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Join us!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Image -->
+    <div class="image-container">
+        <img class="mainpicture" src="/pictures/temp.png" alt="New Haven Image">
+    </div>
+
+    <!-- Main Content Centered -->
+    <main>
+        <h1>Welcome!</h1>
+        <p>
+            <b>Welcome to New Haven,</b> your home for Red Dead Roleplay!<br>
+            Our server is an English 18+ Roleplay Server based on the RedM framework built by roleplayers, for roleplayers.<br>
+            NewHavenRP is considered to be within active development, as our experienced Development Team is continuously working 
+            vigorously on building a custom server for the community to enjoy a unique roleplay experience.
+        </p>
+    </main>
+
+    <!-- Left and Right Content Sections -->
+    <div class="content-container">
+        <div class="left-section">
+            <h2>Left Section</h2>
+            <p>This is where you can write something for the left side.</p>
+        </div>
+        
+        <div class="right-section">
+            <h2>Right Section</h2>
+            <p>This is where you can write something for the right side.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            var navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
 </body>
 </html>

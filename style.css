@@ -1,0 +1,176 @@
+/* General Styles */
+body, html {
+    font-family: "Roboto Mono", serif, Verdana, Geneva, Tahoma, sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffab00, #db4104, #bd0719); /* Gradient background */
+    color: white; /* Default text color */
+    overflow-x: hidden; /* Disables horizontal scrolling */
+}
+
+/* Header with Fixed Position */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000; /* Black header */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+/* Header Title */
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+nav .hamburger {
+    display: none; /* Hide hamburger by default */
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#nav-links li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.menu a:hover {
+    background-color: #ffab00; /* Yellow on hover */
+    border-radius: 5px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    /* Hide navbar links by default on smaller screens */
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* When hamburger is clicked */
+    #nav-links.active {
+        display: flex;
+    }
+
+    /* Show hamburger icon on small screens */
+    nav .hamburger {
+        display: block;
+    }
+
+    /* Adjust navbar links */
+    #nav-links li {
+        margin: 10px 0;
+    }
+
+    #nav-links a {
+        padding: 15px;
+    }
+}
+
+/* Adjust body padding so content doesn’t overlap with header */
+body {
+    padding-top: 120px; /* Space below header */
+}
+
+/* Centering the Main Image */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.mainpicture {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Centering the Main Content */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+/* Styling the Welcome Text */
+main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem; /* Space below the title */
+}
+
+main p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    line-height: 1.8; /* Increases space between lines */
+    padding: 1rem;
+    margin: 0 2rem;
+}
+
+/* Layout for Left & Right Sections */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+/* Left and Right Side Sections */
+.left-section, .right-section {
+    width: 45%;
+    padding: 2rem;
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    color: #000000; /* Black text in sections */
+}
+
+/* Make sure there’s space on smaller screens */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section, .right-section {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+}
