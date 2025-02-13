@@ -141,6 +141,7 @@ main p {
     line-height: 1.8; /* Increases space between lines */
     padding: 1rem;
     margin: 0 2rem;
+    line-height: 1.8;
 }
 
 /* Layout for Left & Right Sections */
@@ -160,6 +161,7 @@ main p {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     margin: 1rem;
     color: #000000; /* Black text in sections */
+    line-height: 1.8;
 }
 
 /* Make sure there’s space on smaller screens */
